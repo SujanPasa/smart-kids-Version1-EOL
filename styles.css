@@ -1,0 +1,79 @@
+/* font import */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pushster&family=Roboto+Slab&display=swap');
+
+/* import guide
+font-family: 'Playfair Display', serif;
+font-family: 'Pushster', cursive;
+font-family: 'Roboto Slab', serif; */
+
+body{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    font-size: 25px;
+    background-color: rgb(255, 255, 174);
+    color: black;
+}
+
+.container{
+    width: 95%;
+    margin: auto auto;
+}
+
+.game-section{
+    margin-top: 3rem;
+    /* border: 2px solid red; */
+    border-radius: 1.25rem;
+    padding-top:1.25rem;
+    padding-bottom:1.25rem;
+    background-color:  rgb(252, 243, 243);
+    box-shadow: 8px 8px 15px lightgrey;
+    /* background-color: rgb(255, 194, 204); */
+    border-style: groove;
+    
+}
+
+.game-name{ 
+    font-family: 'Pushster', cursive;
+    font-size: 3em;
+    text-align: center;
+}
+
+.player-name{
+    font-family: 'Playfair Display', serif;
+    font-size: 2em;
+    text-align: center;
+}
+
+
+.question{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.75em;
+    text-align: center;
+}
+
+.answer-section{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.answer{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.75em;
+    border: 5px solid rgb(253, 95, 174);
+    width: 45%;
+    margin: 1rem 1rem .5rem .25rem;
+    text-align: center;
+    border-style: outset;
+    background-color: lightgoldenrodyellow;
+    /* background-color: rgb(255, 255, 162); */
+    
+}
+
+.answer:hover{
+    background-color: lightgreen;
+}

@@ -49,29 +49,36 @@ var wrong_answer_1 = wrong_answer_generator();
 var wrong_answer_2 = wrong_answer_generator();
 var wrong_answer_3 = wrong_answer_generator();
 
+
+
 var question = "What is the multiply result of " + firstNumber + " and " + secondNumber + " ?";
 
  
     $(".question").text(question);
     console.log("Do-while loop is initilized");
-    $(".option1").text(correctAnswer);
-    $(".option2").text(wrong_answer_1);
-    $(".option3").text(wrong_answer_2);
-    $(".option4").text(wrong_answer_3);
+
+    var arr= [correctAnswer, wrong_answer_1, wrong_answer_2, wrong_answer_3];
+
+    var orderedAnswerArray = [];
+
+    for (i = arr.length; i > 0; i--) {
+
+        var arrayPosittion = Math.floor(Math.random() * i );
+        orderedAnswerArray.push(arr[arrayPosittion]);
+        arr.splice(arrayPosittion,1);
+
+    }
+
+
+    $(".option1").text(orderedAnswerArray[0]);
+    $(".option2").text(orderedAnswerArray[1]);
+    $(".option3").text(orderedAnswerArray[2]);
+    $(".option4").text(orderedAnswerArray[3]);
+
+;
 
     console.log("Correct Answer: " + correctAnswer);
    
-
-//blow is the working code
-
-// $(".answer").click(function(){
-//     $(".answer").removeClass("selected hover-cancel"); //removes any previously selected answer so that only one could be selected
-//     $(this).addClass("selected hover-cancel"); // add css to selected answer
-//     var selectedElement = this;
-//     return(selectedElement);
-//     // console.log(selectedElement);
-
-// });
 
 
 function checkAnswer(selectedElement){

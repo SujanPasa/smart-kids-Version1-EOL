@@ -78,7 +78,7 @@ function checkAnswer(selectedElement){
 
     $(".answer").click(function(){
 
-       // $(".answer").removeClass("hover-cancel"); //removes any previously selected answer so that only one could be selected
+        $(".answer").removeClass("selected hover-cancel"); //removes any previously selected answer so that only one could be selected
         $(this).addClass("selected hover-cancel"); // add css to selected answer
         selectedElement = this;
         return(selectedElement);
@@ -88,9 +88,9 @@ function checkAnswer(selectedElement){
     $(".answer-check-btn").click(function(){
 
         $(".answer").unbind();
-
-        $(".answer-check-btn").unbind();
         
+        $(".answer-check-btn").unbind();
+
         var selectedOption = $(selectedElement).text();
         
         if(selectedOption == correctAnswer){

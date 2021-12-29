@@ -88,7 +88,7 @@ body{
 }
 
 .hover-cancel:hover{
-    background-color: inherit;
+    background-color: rgb(255, 255, 0);;
 }
 
 .correct-selected{

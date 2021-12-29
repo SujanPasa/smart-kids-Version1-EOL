@@ -21,12 +21,8 @@ function random_number_generator_for_wrong_answer(){
     var add_or_substract = Math.floor(Math.random()*20 + 10);
     return(add_or_substract);
 }
+
  
-var firstNumber = randomNumberGenerator();
-var secondNumber = randomNumberGenerator();
-var correctAnswer = firstNumber * secondNumber;
-
-
 function wrong_answer_generator(){
 
     var operator = Math.floor((Math.random()*2)+1);
@@ -44,14 +40,18 @@ function wrong_answer_generator(){
 
 }
 
+
+var firstNumber = randomNumberGenerator();
+var secondNumber = randomNumberGenerator();
+var correctAnswer = firstNumber * secondNumber;
+
 var wrong_answer_1 = wrong_answer_generator();
 var wrong_answer_2 = wrong_answer_generator();
 var wrong_answer_3 = wrong_answer_generator();
 
 var question = "What is the multiply result of " + firstNumber + " and " + secondNumber + " ?";
 
-var whileEnd =  1;
-do{ 
+ 
     $(".question").text(question);
     console.log("Do-while loop is initilized");
     $(".option1").text(correctAnswer);
@@ -59,10 +59,8 @@ do{
     $(".option3").text(wrong_answer_2);
     $(".option4").text(wrong_answer_3);
 
-}
-while (whileEnd !== 1){ 
     console.log("Correct Answer: " + correctAnswer);
-}
+   
 
 //blow is the working code
 
@@ -79,7 +77,8 @@ while (whileEnd !== 1){
 function checkAnswer(selectedElement){
 
     $(".answer").click(function(){
-        $(".answer").removeClass("selected hover-cancel"); //removes any previously selected answer so that only one could be selected
+
+       // $(".answer").removeClass("hover-cancel"); //removes any previously selected answer so that only one could be selected
         $(this).addClass("selected hover-cancel"); // add css to selected answer
         selectedElement = this;
         return(selectedElement);
@@ -89,6 +88,9 @@ function checkAnswer(selectedElement){
     $(".answer-check-btn").click(function(){
 
         $(".answer").unbind();
+
+        $(".answer-check-btn").unbind();
+        
         var selectedOption = $(selectedElement).text();
         
         if(selectedOption == correctAnswer){
@@ -97,13 +99,12 @@ function checkAnswer(selectedElement){
             console.log("Selected Option:  "+selectedOption);
             console.log("Correct Answer " + correctAnswer)
     
-        }
-
-        else if(selectedOption != correctAnswer){
+        }else if(selectedOption != correctAnswer){
             
             $(selectedElement).removeClass("selected").addClass("incorrect-selected");
             $(".answer-check-btn").addClass("answer-check-wrong").text("Wrong Answer");
-            console.log("Selected Option:  "+selectedOption);
+
+            console.log("Selected Option:  " + selectedOption);
             console.log("Correct Answer " + correctAnswer)
            
         }
@@ -125,8 +126,9 @@ $(".next-question").click(function(){
     $(".answer-check-right").removeClass("answer-check-right");
     $(".answer-check-wrong").removeClass("answer-check-wrong");
     $(".next-question").addClass("hide");
+    $(".answer-check-btn").text("Check Answer");
+
     gameStart();
 })
 
 gameStart();
-

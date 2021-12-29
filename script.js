@@ -77,12 +77,10 @@ var question = "What is the multiply result of " + firstNumber + " and " + secon
 function checkAnswer(selectedElement){
 
     $(".answer").click(function(){
-
-        $(".answer").removeClass("selected hover-cancel"); //removes any previously selected answer so that only one could be selected
-        $(this).addClass("selected hover-cancel"); // add css to selected answer
+        $(".answer").removeClass("selected hover-cancel");   //removes any previously selected answer so that only one could be selected
+        $(this).addClass("selected hover-cancel");   // add css to selected answer
         selectedElement = this;
         return(selectedElement);
-        
     });
 
     $(".answer-check-btn").click(function(){

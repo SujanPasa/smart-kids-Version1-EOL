@@ -1,0 +1,31 @@
+Plans for the game: 
+
+1. Multiple Player Leader Board
+2. Multiple Level (Smart, Smarter, Smartest)
+3. Multiple Subjects (Maths, English, Science)
+4. Maths Problems: 
+
+    1. Multiply
+    2. Divide
+    3. Addition
+    4. Substraction
+    5. Prime Number
+    6. Fraction
+
+5. English Problems:
+    1. Synonymns
+    2. Antonyms
+    3. Word meanings
+    6. Dictation words (Correct Spelling) / Spell Bee
+
+============================ Ideas for Leaderboard ==================================
+
+1. Weekly Challange
+2. Timer Sprint
+
+/////////////////////////////////////////////////////////////////
+
+===================== Pages Required =================
+1. Leaderboard / dashboard
+2. Subject Selection
+3. Level Selection

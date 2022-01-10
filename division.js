@@ -1,61 +1,61 @@
-// var playerName = prompt("Enter your Name: ");
-// // document.querySelector(".player-name").innerText = playerName;
-// $(".player-name").text(playerName);
 
+function divisionGameStart(){
+     var divisior, dividend, correctAnswer;
+    function divisiorGenerator(){
+        divisior = Math.floor(Math.random()*99 + 1);
+        if(divisior < 10 ){
+            divisior = divisior + 10 ;
+        }
+        console.log("Divisior " + divisior);
+    }    
 
-function gameStart(){
+    function dividendGenerator(){
+        dividend = Math.floor(Math.random()*10000 + 1);
+        if(dividend < 1000){
+            dividend = dividend + 10000;
+            
+        }
+        console.log( "Dividend " + dividend);
+    }
+
+    divisiorGenerator();
+    dividendGenerator();
+    correctAnswer = divisior * dividend;
+    // console.log("Correct Answer " + correctAnswer);
+
+        function wrong_answer_generator(){
+
+            function random_number_generator_for_wrong_answer(){
+                var add_or_substract = Math.floor(Math.random()*20 + 10);
+                return(add_or_substract);
+            }
         
-//Random Number Generator Function for Question 
-function randomNumberGenerator(){
-    var number = Math.floor((Math.random()*99)+1);
-    if (number < 10 ) { 
-        number = number * 3;
-    }
+            var operator = Math.floor((Math.random()*2)+1);
+        
+            if(operator === 1){
+        
+                var wrong_answer =  correctAnswer + random_number_generator_for_wrong_answer();
+            }
+        
+            else{
+                var wrong_answer =  correctAnswer - random_number_generator_for_wrong_answer();   
+            }
+        
+            return(wrong_answer);
+        
+        }
 
-    return number;
-    console.log(number);
-}
+        var wrong_answer_1 = wrong_answer_generator();
+        var wrong_answer_2 = wrong_answer_generator();
+        var wrong_answer_3 = wrong_answer_generator();
 
+        
+        
+    var question = "What is the multiply result of " + dividend + " dibided by " + divisior + " ?";
 
-function random_number_generator_for_wrong_answer(){
-    var add_or_substract = Math.floor(Math.random()*20 + 10);
-    return(add_or_substract);
-}
-
- 
-function wrong_answer_generator(){
-
-    var operator = Math.floor((Math.random()*2)+1);
-
-    if(operator === 1){
-
-        var wrong_answer =  correctAnswer + random_number_generator_for_wrong_answer();
-    }
-
-    else{
-        var wrong_answer =  correctAnswer - random_number_generator_for_wrong_answer();   
-    }
-
-    return(wrong_answer);
-
-}
-
-
-var firstNumber = randomNumberGenerator();
-var secondNumber = randomNumberGenerator();
-var correctAnswer = firstNumber * secondNumber;
-
-var wrong_answer_1 = wrong_answer_generator();
-var wrong_answer_2 = wrong_answer_generator();
-var wrong_answer_3 = wrong_answer_generator();
-
-
-
-var question = "What is the multiply result of " + firstNumber + " and " + secondNumber + " ?";
-
- 
+    
     $(".question").text(question);
-    console.log("Do-while loop is initilized");
+    // console.log("Do-while loop is initilized");
 
     var arr= [correctAnswer, wrong_answer_1, wrong_answer_2, wrong_answer_3];
 
@@ -75,13 +75,12 @@ var question = "What is the multiply result of " + firstNumber + " and " + secon
     $(".option3").text(orderedAnswerArray[2]);
     $(".option4").text(orderedAnswerArray[3]);
 
-;
 
     console.log("Correct Answer: " + correctAnswer);
-   
 
 
-function checkAnswer(selectedElement){
+
+    function checkAnswer(selectedElement){
 
     $(".answer").click(function(){
         $(".answer").removeClass("selected hover-cancel");   //removes any previously selected answer so that only one could be selected
@@ -103,7 +102,7 @@ function checkAnswer(selectedElement){
             $(".answer-check-btn").addClass("answer-check-right").text("Correct Answer");
             console.log("Selected Option:  "+selectedOption);
             console.log("Correct Answer " + correctAnswer)
-    
+
         }else if(selectedOption != correctAnswer){
             
             $(selectedElement).removeClass("selected").addClass("incorrect-selected");
@@ -111,19 +110,19 @@ function checkAnswer(selectedElement){
 
             console.log("Selected Option:  " + selectedOption);
             console.log("Correct Answer " + correctAnswer)
-           
+        
         }
         
         $(".next-question").removeClass("hide");
 
     })
-}
+    }
 
     checkAnswer(); 
 
-}
+    }
 
-$(".next-question").click(function(){
+    $(".next-question").click(function(){
     // $(".selected").removeClass("selected");
     $(".correct-selected").removeClass("correct-selected");
     $(".incorrect-selected").removeClass("incorrect-selected");
@@ -133,7 +132,8 @@ $(".next-question").click(function(){
     $(".next-question").addClass("hide");
     $(".answer-check-btn").text("Check Answer");
 
-    gameStart();
-})
+    divisionGameStart();
+    })
 
-gameStart();
+
+    divisionGameStart();

@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Pushster&family=Roboto+Slab&display=swap');
+
+/* import guide
+font-family: 'Playfair Display', serif;
+font-family: 'Pushster', cursive;
+font-family: 'Roboto Slab', serif; */
+
+
+.games{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5Rem;
+    justify-content: center;
+    align-items: center;
+}
+.game{
+    font-size: 2.5em;
+    font-family: 'Pushster', cursive;
+
+}
+

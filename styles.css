@@ -11,8 +11,9 @@ body{
     margin: 0px 0px;
     padding: 0px 0px;
     font-size: 25px;
-    background-color: rgb(255, 255, 174);
+    background-image: url("./images/bg.png");
     color: black;
+
 }
 
 .container{
@@ -32,7 +33,7 @@ a{
     padding-top:1.25rem;
     padding-bottom:1.25rem;
     background-color:  rgb(252, 243, 243);
-    box-shadow: 8px 8px 15px lightgrey;
+    /* box-shadow: 8px 8px 15px lightgrey; */
     /* background-color: rgb(255, 194, 204); */
     border-style: groove;
     
@@ -42,12 +43,16 @@ a{
     font-family: 'Pushster', cursive;
     font-size: 3em;
     text-align: center;
+    color: hotpink;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .player-name{
     font-family: 'Playfair Display', serif;
-    font-size: 2em;
-    text-align: center;
+    font-size : 2em;
+    text-align : center;
+    color: #ffffff;
 }
 
 
